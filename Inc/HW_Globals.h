@@ -30,7 +30,7 @@
 
 
 // !!!!!!!!!!!!!!!!!!! Отладка !!!!!!!!!!!!!!!!!!!!!!!!!!!
-#define _DEBUG_ASSERT
+#define _DEBUG_ASSERT       // вывод моих сообщений на OLED
 #define USE_FULL_ASSERT
 
 // #define UART2_PARAM_OLED
@@ -405,10 +405,18 @@ typedef enum
 
 
 
+// Обработка ошибок
+#if defined _DEBUG_ASSERT
+
+  #define ASSERT(expr)                      \
+    {                                       \
+      if (!(expr))                          \
+        DebugReport (__FILE__, __LINE__);   \
+    }
+#else
+  #define ASSERT(expr)        ((void) 0)
+#endif
 
 
-
-
-
-#endif	// _HW_GLOBALS_H_
+#endif	// _HW_GLOBALS_H_ ____________________________________________________________________________________________________________________
 

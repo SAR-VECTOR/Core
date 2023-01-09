@@ -47,7 +47,7 @@ typedef enum	// Аргументы процедуры проверки исчезновения питания
 void PowerSwitch (Switched_power_supply_circuit PowerCircuit, Power_supply_circuit_status_after_switching PowerStatus);
 void GoToSTANDBYmode ();
 Continuity_Of_Supply_Voltage WhatWasStateOfSupplyVoltage ();
-void WakingUpInNextMinuteAtRightSecond (u8 u8_WakeUpSecond);
+void WakingUpInNextMinuteAtRightSecond (u8 u8_WakeUpSeconds);
 
 
 #endif /* _HW_POWER_H */

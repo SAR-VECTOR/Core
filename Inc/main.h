@@ -102,19 +102,6 @@ void DebugReport (char* pcc_FileName, uint16_t u16_LineNo);
 #define UART2_Tx_Pin GPIO_PIN_2
 #define UART2_Rx_Pin GPIO_PIN_3
 
-
-#if defined _DEBUG_ASSERT
-
-  #define ASSERT(expr)                      \
-    {                                       \
-      if (!(expr))                          \
-        DebugReport (__FILE__, __LINE__);   \
-    }
-#else
-  #define ASSERT(expr)        ((void) 0)
-#endif
-
-
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
